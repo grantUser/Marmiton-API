@@ -1,0 +1,727 @@
+{
+	"info": {
+		"_postman_id": "0",
+		"name": "Marmiton",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "0"
+	},
+	"item": [
+		{
+			"name": "account",
+			"item": [
+				{
+					"name": "check-username",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "Ktor client",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Postman\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.unify.uno/mobile-app-v5/account/check-username",
+							"protocol": "https",
+							"host": [
+								"api",
+								"unify",
+								"uno"
+							],
+							"path": [
+								"mobile-app-v5",
+								"account",
+								"check-username"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "Ktor client",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"your_email@demo.com\",\r\n  \"password\": \"your_password\",\r\n  \"username\": \"your_username\",\r\n  \"profile\": {\r\n    \"persoInfo\": {\r\n      \"gender\": \"M\",\r\n      \"birthday\": \"1970-01-01\"\r\n    },\r\n    \"preferences\": {\r\n      \"optInMainNewsletter\": true,\r\n      \"optInPartners\": true\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.unify.uno/mobile-app-v5/account/register",
+							"protocol": "https",
+							"host": [
+								"api",
+								"unify",
+								"uno"
+							],
+							"path": [
+								"mobile-app-v5",
+								"account",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "Ktor client",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usernameOrEmail\": \"your_email@demo.com\",\r\n    \"password\": \"your_password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.unify.uno/mobile-app-v5/account/login",
+							"protocol": "https",
+							"host": [
+								"api",
+								"unify",
+								"uno"
+							],
+							"path": [
+								"mobile-app-v5",
+								"account",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_BEARER",
+								"type": "text"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Ktor client",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.unify.uno/mobile-app-v5/account/delete",
+							"protocol": "https",
+							"host": [
+								"api",
+								"unify",
+								"uno"
+							],
+							"path": [
+								"mobile-app-v5",
+								"account",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_BEARER",
+								"type": "text"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Ktor client",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"dietPrefInfo\": {\r\n    \"diets\": [\r\n      \"vegetarian\",\r\n      \"pescetarian\",\r\n      \"vegan\",\r\n      \"glutenFree\",\r\n      \"anything\"\r\n    ], // empty if all items are selected\r\n    \"filterIngredients\": [] // obtained via the ingredient-autocomplet\r\n  },\r\n  \"equipmentsInfo\": [\r\n    \"oven\",\r\n    \"microwave\",\r\n    \"burner\",\r\n    \"fryer\",\r\n    \"pressureCooker\",\r\n    \"plancha\",\r\n    \"foodProcessor\",\r\n    \"wok\",\r\n    \"barbecue\"\r\n  ],\r\n  \"homeInfo\": {\r\n    \"adult\": 1,\r\n    \"child\": 0\r\n  },\r\n  \"persoInfo\": {\r\n    \"gender\": \"M\", // or F\r\n    \"birthday\": \"1970-01-01\",\r\n    \"lookingFor\": [\r\n      \"inspiration\" // inspiration or organization or becoming_chef or eat_healthier\r\n    ],\r\n    \"skills\": \"intermediate\" // beginner or intermediate or chef\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.unify.uno/mobile-app-v5/profile",
+							"protocol": "https",
+							"host": [
+								"api",
+								"unify",
+								"uno"
+							],
+							"path": [
+								"mobile-app-v5",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bookmarks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_BEARER",
+								"type": "text"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Ktor client",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.unify.uno/mobile-app-v5/book/categories?page=1&limit=20",
+							"protocol": "https",
+							"host": [
+								"api",
+								"unify",
+								"uno"
+							],
+							"path": [
+								"mobile-app-v5",
+								"book",
+								"categories"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bookmarks",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_BEARER",
+								"type": "text"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Ktor client",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.unify.uno/mobile-app-v5/book/recipes/168361",
+							"protocol": "https",
+							"host": [
+								"api",
+								"unify",
+								"uno"
+							],
+							"path": [
+								"mobile-app-v5",
+								"book",
+								"recipes",
+								"168361"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bookmarks",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_BEARER",
+								"type": "text"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Ktor client",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.unify.uno/mobile-app-v5/book/recipes/168361",
+							"protocol": "https",
+							"host": [
+								"api",
+								"unify",
+								"uno"
+							],
+							"path": [
+								"mobile-app-v5",
+								"book",
+								"recipes",
+								"168361"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "search",
+			"item": [
+				{
+					"name": "search",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_BEARER",
+								"description": "Optional",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "User-Agent",
+								"value": "Ktor client",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.unify.uno/mobile-app-v5/search?search=jarret+demi+sel&sort=pertinence&page=1&limit=20&dt=entree%2Cplatprincipal%2Cdessert%2Camusegueule%2Caccompagnement%2Csauce%2Cboisson%2Cconfiserie%2Cconseil&dif=1%2C2%2C3%2C4&exp=1%2C2%2C3&prt=1%2C2%2C3%2C4%2C5&rct=1%2C2%2C3%2C4%2C5&ttlt=15%2C30%2C45&type=recipe%2Cseason%2CmenuSuggestion",
+							"protocol": "https",
+							"host": [
+								"api",
+								"unify",
+								"uno"
+							],
+							"path": [
+								"mobile-app-v5",
+								"search"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "jarret+demi+sel"
+								},
+								{
+									"key": "sort",
+									"value": "pertinence",
+									"description": "pertinence or rating or reviewsCount"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								},
+								{
+									"key": "dt",
+									"value": "entree%2Cplatprincipal%2Cdessert%2Camusegueule%2Caccompagnement%2Csauce%2Cboisson%2Cconfiserie%2Cconseil"
+								},
+								{
+									"key": "dif",
+									"value": "1%2C2%2C3%2C4"
+								},
+								{
+									"key": "exp",
+									"value": "1%2C2%2C3"
+								},
+								{
+									"key": "prt",
+									"value": "1%2C2%2C3%2C4%2C5"
+								},
+								{
+									"key": "rct",
+									"value": "1%2C2%2C3%2C4%2C5"
+								},
+								{
+									"key": "ttlt",
+									"value": "15%2C30%2C45"
+								},
+								{
+									"key": "type",
+									"value": "recipe%2Cseason%2CmenuSuggestion"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ingredients-autocomplete",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_BEARER",
+								"description": "Optional",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "User-Agent",
+								"value": "Ktor client",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.unify.uno/mobile-app-v5/general/ingredients/autocomplete?search=demo",
+							"protocol": "https",
+							"host": [
+								"api",
+								"unify",
+								"uno"
+							],
+							"path": [
+								"mobile-app-v5",
+								"general",
+								"ingredients",
+								"autocomplete"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "demo"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search-autocomplete",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_BEARER",
+								"description": "Optional",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "User-Agent",
+								"value": "Ktor client",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.unify.uno/mobile-app-v5/search/autocomplete?search=demo",
+							"protocol": "https",
+							"host": [
+								"api",
+								"unify",
+								"uno"
+							],
+							"path": [
+								"mobile-app-v5",
+								"search",
+								"autocomplete"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "demo"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "selections",
+			"item": [
+				{
+					"name": "selections",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_BEARER",
+								"description": "Optional",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "User-Agent",
+								"value": "Ktor client",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.unify.uno/mobile-app-v5/selections",
+							"protocol": "https",
+							"host": [
+								"api",
+								"unify",
+								"uno"
+							],
+							"path": [
+								"mobile-app-v5",
+								"selections"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "recipes-selections",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_BEARER",
+								"description": "Optional",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "User-Agent",
+								"value": "Ktor client",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.unify.uno/mobile-app-v5/selections/2/recipes?page=1&limit=20",
+							"protocol": "https",
+							"host": [
+								"api",
+								"unify",
+								"uno"
+							],
+							"path": [
+								"mobile-app-v5",
+								"selections",
+								"2",
+								"recipes"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								}
+							]
+						},
+						"description": "2 is the id of the selections obtained with the /selections endpoints, remember to update it according to the desired selection."
+					},
+					"response": []
+				},
+				{
+					"name": "recipes-pictures",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_BEARER",
+								"type": "text"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Ktor client",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "/C:/Users/Administrateur/Desktop/frite-brochette.png"
+							}
+						},
+						"url": {
+							"raw": "https://api.unify.uno/mobile-app-v5/recipes/168361/pictures",
+							"protocol": "https",
+							"host": [
+								"api",
+								"unify",
+								"uno"
+							],
+							"path": [
+								"mobile-app-v5",
+								"recipes",
+								"168361",
+								"pictures"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "general",
+			"item": [
+				{
+					"name": "discover",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_BEARER",
+								"description": "Optional",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "User-Agent",
+								"value": "Ktor client",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.unify.uno/mobile-app-v5/home/discover",
+							"protocol": "https",
+							"host": [
+								"api",
+								"unify",
+								"uno"
+							],
+							"path": [
+								"mobile-app-v5",
+								"home",
+								"discover"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "custom",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_BEARER",
+								"type": "text"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Ktor client",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.unify.uno/mobile-app-v5/home/custom?advertisingId=0000",
+							"protocol": "https",
+							"host": [
+								"api",
+								"unify",
+								"uno"
+							],
+							"path": [
+								"mobile-app-v5",
+								"home",
+								"custom"
+							],
+							"query": [
+								{
+									"key": "advertisingId",
+									"value": "0000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "recipes-id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_BEARER",
+								"description": "Optional",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "User-Agent",
+								"value": "Ktor client",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.unify.uno/mobile-app-v5/recipes/24681?w=1440",
+							"protocol": "https",
+							"host": [
+								"api",
+								"unify",
+								"uno"
+							],
+							"path": [
+								"mobile-app-v5",
+								"recipes",
+								"24681"
+							],
+							"query": [
+								{
+									"key": "w",
+									"value": "1440"
+								}
+							]
+						},
+						"description": "24681 is a recipe ID, please change it using the target ID recipe."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
