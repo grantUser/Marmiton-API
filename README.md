@@ -91,7 +91,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you find this repository helpful and use it to set up your system, we kindly request that you provide attribution to the original author. You can include a credit in your project documentation, website, or any appropriate place, mentioning the source:
 
-"Marmiton-API by [grantUser](https://github.com/grantUser) - https://github.com/grantUser/Marmiton-API/"
+"Marmiton-API by [grantUser](https://github.com/grantUser) - https://github.com/grantUser/marmiton-official-api"
 
 Thank you for your understanding and cooperation!
 
